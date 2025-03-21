@@ -1,0 +1,28 @@
+%{
+#include<stdio.h>
+#include<string.h>
+int max_len=0;
+%}
+
+%%
+[a-zA-Z]+	{
+int len=strlen(yytext);
+if(len>max_len){
+max_len=len;
+}
+}
+[ \t\n]	;
+.	;
+%%
+
+int main()
+{
+printf("Enter text:\n");
+yylex();
+printf("Longest words: %d\n",max_len);
+return 0;
+}
+
+int yywrap(){
+return 1;
+}

@@ -1,0 +1,20 @@
+%{
+#include<stdio.h>
+%}
+
+%%
+[A-Z]+	{printf("Capital Words in the Given String: %s\n",yytext);}
+[a-zA-Z]* {}
+[ \t\n]+ ;
+%%
+
+int main()
+{
+printf("Enter the string: ");
+yylex();
+return 0;
+}
+
+int yywrap(){
+return 1;
+}

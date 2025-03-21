@@ -1,0 +1,23 @@
+%{
+#include<stdio.h>
+%}
+
+%%
+[0-9]+	{printf("Number: %s\n",yytext);}
+\+	{printf("Addition Operator: %s\n",yytext);}
+\-	{printf("Subtraction Operator: %s\n",yytext);}
+\*	{printf("Multiplication Operator: %s\n",yytext);}
+\/	{printf("Division Operator: %s\n",yytext);}
+[ \t\n]		;
+.		;
+%%
+
+int main(){
+printf("Enter Mathematical expression:\n");
+yylex();
+return 0;
+}
+
+int yywrap(){
+return 1;
+}

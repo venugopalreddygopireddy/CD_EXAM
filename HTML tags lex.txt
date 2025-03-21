@@ -1,0 +1,21 @@
+%{
+#include <stdio.h>
+%}
+
+%%
+
+\<[^>]+\>   { printf("HTML Tag: %s\n", yytext); }  // Match HTML tags
+[ \t\n]     ;  // Ignore spaces, tabs, and new lines
+.           ;  // Ignore all other characters
+
+%%
+
+int main() {
+    printf("Enter HTML code:\n");
+    yylex();
+    return 0;
+}
+
+int yywrap() {
+    return 1;
+}

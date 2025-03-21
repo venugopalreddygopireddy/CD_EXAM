@@ -1,0 +1,21 @@
+%{
+#include<stdio.h>
+int cc=0;
+%}
+
+%%
+"//".*	{cc++;}
+"/"([^]|\+[^/])\+"/"	{cc++;}
+.|\n	{printf("%s", yytext);}
+%%
+
+int main(){
+printf("Enter C program (Ctrl+Z to end the program): ");
+yylex();
+printf("\nNumber of comment lines removed : %d\n",cc);
+return 0;
+}
+
+int yywrap(){
+return 1;
+}
