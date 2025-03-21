@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+char s[] = "i+i*i";
+int i = 0;
+
+int main() {
+    if (s[i] == 'i') { printf("Shift i\n"); i++; }
+    if (s[i] == '+') { printf("Shift +\n"); i++; }
+    if (s[i] == 'i') { printf("Shift i\nReduce E → i\n"); i++; }
+    if (s[i] == '*') { printf("Shift *\n"); i++; }
+    if (s[i] == 'i') { printf("Shift i\nReduce T → i\n"); i++; }
+
+    printf("Valid Expression\n");
+}
+

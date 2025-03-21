@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+char p[][10] = {"E=E+T", "E=T", "T=T*F", "T=F", "F=(E)", "F=i"};
+
+int main() {
+    for (int i = 0; i < 6; i++) {
+        if (p[i][2] == 'i' || p[i][2] == '(')
+            printf("LEADING(%c) = {%c}\n", p[i][0], p[i][2]);
+        else
+            printf("LEADING(%c) = LEADING(%c)\n", p[i][0], p[i][2]);
+    }
+}

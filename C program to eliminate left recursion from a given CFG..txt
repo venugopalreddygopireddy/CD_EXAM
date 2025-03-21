@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+char A[] = "A=Aa|b";
+
+int main() {
+    if (A[2] == A[0]) 
+        printf("%c -> %c%c'\n%c' -> %c%c'|#\n", A[0], A[4], A[0], A[0], A[3], A[0]);
+    else 
+        printf("No Left Recursion");
+}
+

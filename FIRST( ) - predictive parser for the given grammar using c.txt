@@ -1,0 +1,9 @@
+#include <stdio.h>
+
+char A[][10] = {"E=TR", "R=+TR", "R=#", "T=FS", "S=*FS", "S=#", "F=(E)", "F=i"};
+
+int main() {
+    for (int i = 0; i < 8; i++)
+        if (A[i][2] >= 'A' && A[i][2] <= 'Z') printf("FIRST(%c) = FIRST(%c)\n", A[i][0], A[i][2]);
+        else printf("FIRST(%c) = {%c}\n", A[i][0], A[i][2]);
+}

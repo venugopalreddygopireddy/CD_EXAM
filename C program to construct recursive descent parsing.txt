@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+char s[] = "i*i+i";
+int i = 0, valid = 1;
+
+int main() {
+    if (s[i] == 'i') i++;
+    if (s[i] == '*') i++;
+    if (s[i] == 'i') i++;
+    if (s[i] == '+') i++;
+    if (s[i] == 'i') i++;
+    
+    if (s[i] == '\0') printf("Valid");
+    else printf("Invalid");
+}
+

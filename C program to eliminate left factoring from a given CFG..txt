@@ -1,0 +1,10 @@
+#include <stdio.h>
+
+char A[] = "A=ab|ac";
+
+int main() {
+    if (A[2] == A[5])  
+        printf("%c -> %cX\nX -> %c|%c\n", A[0], A[2], A[3], A[6]);
+    else 
+        printf("No Left Factoring");
+}

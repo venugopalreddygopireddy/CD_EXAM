@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+char p[][10] = {"E=E+T", "E=T", "T=T*F", "T=F", "F=(E)", "F=i"};
+
+int main() {
+    for(int i = 0; i < 6; i++) {
+        int len = 0;
+        for(int j = 2; p[i][j] != '\0'; j++) len = j;  
+
+        if(p[i][len] == 'i' || p[i][len] == ')')
+            printf("TRAILING(%c)={%c}\n", p[i][0], p[i][len]);
+        else
+            printf("TRAILING(%c)=TRAILING(%c)\n", p[i][0], p[i][len]);
+    }
+}
+

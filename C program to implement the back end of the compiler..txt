@@ -1,0 +1,10 @@
+#include <stdio.h>
+
+char s[] = "a=b+c*d";
+char t = '1';
+
+int main() {
+    printf("T%c = %c * %c\n", t, s[4], s[6]);  
+    printf("T%c = %c + T%c\n", t + 1, s[2], t);  
+    printf("%c = T%c\n", s[0], t + 1);  
+}

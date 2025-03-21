@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int c, words, lines;
+char s[] = "Hello World\nThis is Lexical Analyzer";
+
+int main() {
+    for (int i = 0; s[i]; i++) {
+        c++;
+        if (s[i] == ' ' || s[i] == '\n') words++;
+        if (s[i] == '\n') lines++;
+    }
+    printf("Chars: %d Words: %d Lines: %d\n", c, words + 1, lines + 1);
+}
+
