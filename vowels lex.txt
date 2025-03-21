@@ -1,0 +1,18 @@
+%{
+#include<stdio.h>
+%}
+
+%%
+[aeiouAEIOU][a-zA-Z]*	{printf("Valid string: %s\n",yytext);}
+.	{printf("Invalid String\n");}
+%%
+
+int main(){
+printf("Enter the string: ");
+yylex();
+return 0;
+}
+
+int yywrap(){
+return 1;
+}
